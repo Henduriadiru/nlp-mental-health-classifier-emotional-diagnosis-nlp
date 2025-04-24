@@ -10,18 +10,49 @@ This project applies Natural Language Processing (NLP) and Machine Learning to a
 - Build a classifier to detect mental health issues based on written text.
 - Compare different feature extraction methods: TF-IDF, Word2Vec, and their combination.
 - Evaluate multiple ML models (SVM, Random Forest, XGBoost, Adaboost).
+- Evaluate Transformer model (Distilbert)
 - Apply dimensionality reduction with PCA for better performance and visualization.
 
 ## 📁 File Structure
-
+mental-health-text-diagnosis/
+│
+├── Sentiment_Analysis_Mental_Helath_Diganostic.ipynb       # Classical ML with TF-IDF + Word2Vec
+├── sentiment_analysis_mentalhealth_distilbert.ipynb        # Transformer-based model using DistilBERT
+├── README.md                                                # Project documentation
+└── requirements.txt                                         # (optional) Python dependencies
 ## 🔧 Techniques Used
 
 - **Preprocessing:** Tokenization, Lemmatization, Stopword Removal
 - **Vectorization:** TF-IDF, Word2Vec, and Hybrid
-- **ML Models:** SVM, Random Forest, XGBoost
+- **ML Models:** SVM, Random Forest, XGBoost, Adaboost, Distilbert-base-uncased
 - **Processing Calculate:** LIME
 - **Dimensionality Reduction:** PCA
 - **Metrics:** Accuracy, Precision, Recall, F1-score, Confusion Matrix
+  All techniques is fine tuning!!
+  
+This repository now includes two approaches to text classification for mental health:
+
+1. **Traditional ML Approach**  
+   Using TF-IDF, Word2Vec, and classical models (SVM, Random Forest, XGBoost)  
+   → File: `Sentiment_Analysis_Mental_Helath_Diganostic.ipynb`
+
+2. **Transformer-Based Approach**  
+   Fine-tuning DistilBERT using Hugging Face Transformers library for more contextual understanding of language.  
+   → File: `sentiment_analysis_mentalhealth_distilbert.ipynb`
+
+The DistilBERT model is trained and evaluated using a stratified dataset split, early stopping, and precision-focused evaluation.
+
+**Why DistilBERT?**  
+It provides a lighter, faster alternative to BERT with nearly comparable performance — suitable for fine-tuning on moderate hardware (e.g. Google Colab).
+
+---
+
+## 🧠 Model Comparison
+
+| Approach         | Feature Representation     | Strengths                             |
+|------------------|----------------------------|----------------------------------------|
+| Traditional ML   | TF-IDF, Word2Vec           | Simpler, interpretable, faster to train|
+| DistilBERT       | Transformer Embeddings     | Context-aware, handles nuance better   |
 
 ## 📊 Results
 
@@ -37,3 +68,9 @@ Evaluation metrics suggest that combining Word2Vec with TF-IDF yields better res
 - imbalanced-learn
 - matplotlib, seaborn
 - xgboost
+
+📜 License
+MIT License
+
+🙋‍♂️ Author
+Made with ❤️ by [Hendriadi Dwi Nugraha]. Contributions and feedback are welcome!
